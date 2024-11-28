@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "0fe4c331-3cd2-4fa0-8366-66dee4f7b7e3",
+		"name": "rbac-vrvSecurityAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37280735"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDYyNTE3OGJhZWRlNmNiYjlhNWZhYSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTczMjcwMzQwMCwiZXhwIjoxNzMyNzA3MDAwfQ.iT1C3tw4dJ1Qegs3YRC3p0a3n4DxuASw9Ivl0quaq4g",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:5000/admin/getAllUsers"
+			},
+			"response": []
+		},
+		{
+			"name": "logoutUser",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
