@@ -8,8 +8,9 @@ const express = require('express');
 const dotenv = require('dotenv'); // For loading environment variables from a .env file
 const mongoose = require('mongoose'); // MongoDB ODM library for database interaction
 const cors = require('cors'); // Middleware to enable Cross-Origin Resource Sharing
-const authRoutes = require('./routes/auth.js'); // Routes for user authentication
+const userAuthRoutes = require('./routes/auth.js'); // Routes for user authentication
 const adminAuthRoutes = require('./routes/adminAuth.js'); // Routes specific to admin authentication
+const moderatorAuthRoutes = require('./routes/moderatorAuth.js'); // Routes specific to Moderator authentication
 const adminValidate = require('./middleware/adminValidate.js'); // Middleware for admin role validation
 const moderatorValidate = require('./middleware/moderatorValidate.js'); // Middleware for moderator role validation
 
@@ -38,7 +39,7 @@ app.use("/test", (req, res) => {
  * @route /auth
  * @description Routes for user authentication (e.g., login, signup)
  */
-app.use("/auth", authRoutes);
+app.use("/auth", userAuthRoutes);
 
 /**
  * Admin Routes
@@ -56,7 +57,7 @@ app.use("/admin", adminValidate, adminAuthRoutes);
  * @middleware moderatorValidate
  * @access Restricted to moderators
  */
-app.use("/moderator", moderatorValidate, authRoutes);
+app.use("/moderator", moderatorValidate, moderatorAuthRoutes);
 
 // Define the port for the server
 const PORT = process.env.PORT || 5000;
